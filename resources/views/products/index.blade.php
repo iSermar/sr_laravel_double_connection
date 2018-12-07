@@ -4,12 +4,15 @@
     </head>
     <body>
         <div>
+            <button><a href="">Create</a></button>
+            <br/><br/>
             <table border="2">
                 <tr>
                     <td>#</td>
                     <td>Name</td>
                     <td>Description</td>
                     <td>Category</td>
+                    <td colspan="3" ><center>Actions</center></td>
                 </tr>
                 @foreach ($products as $product)
                     <tr>
@@ -19,6 +22,9 @@
                         @foreach ($product->categories as $category)                            
                             <td>{{ $category->name }}</td>
                         @endforeach
+                        <td><button><a href="{{ route('products.show', $product->id) }}">Show</a></button></td>
+                        <td><button><a href="">Edit</a></button></td>
+                        <td><button><a href="">Delete</a></button></td>
                     </tr>
                 @endforeach
             </table>

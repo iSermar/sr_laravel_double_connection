@@ -42,7 +42,18 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        // Find by product id with categories
+        $product = Product::with('categories')->find($id);
+
+        // Travel of product to categories 
+        foreach ($product->categories as $category) {
+            $category;
+        }
+
+        // Return to product show with parameters
+        return view('products.show')
+            ->with('product', $product)
+            ->with('category', $category);
     }
 
     /**
