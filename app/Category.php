@@ -13,22 +13,22 @@ class Category extends Model
     protected $table = 'categories';
 
     // Protected fillable or inserts
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['id', 'name', 'description'];
 
     // Protected define order
-    protected $sorted = ['name', 'description'];
+    protected $sorted = ['id', 'name', 'description'];
 
     // Protected hidden fields
     protected $hidden = ['id', 'created_at', 'update_at'];
 
     // Protected guard
-    protected $guarded = ['name', 'description'];
+    protected $guarded = ['id', 'name', 'description'];
     
     
     // Relationships
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'category_product');
     }
 }
 

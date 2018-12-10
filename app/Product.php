@@ -13,21 +13,21 @@ class Product extends Model
     protected $table = 'products';
 
     // Protected fillable or inserts
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['id', 'name', 'description'];
 
     // Protected define order
-    protected $sorted = ['name', 'description'];
+    protected $sorted = ['id', 'name', 'description'];
 
     // Protected hidden fields
     protected $hidden = ['id', 'created_at', 'update_at'];
 
     // Protected guard
-    protected $guarded = ['name', 'description'];
+    protected $guarded = ['id', 'name', 'description'];
 
 
     // Relationships
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class, 'category_product');
     }
 }
