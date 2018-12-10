@@ -28,6 +28,6 @@ class Product extends Model
     // Relationships
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'category_product');
+        return $this->belongsToMany(Category::class, 'category_product')->withTimestamps();
     }
 }
