@@ -4,7 +4,7 @@
     </head>
     <body>
         <div>
-            <button><a href="">Create</a></button>
+            <button><a href="{{ route('products.create') }}">Create</a></button>
             <br/><br/>
             <table border="2">
                 <tr>
