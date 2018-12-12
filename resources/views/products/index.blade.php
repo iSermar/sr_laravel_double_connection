@@ -19,11 +19,13 @@
                         <td>{{ $product->id }}</td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
+                        
                         @foreach ($product->categories as $category)                            
                             <td>{{ $category->name }}</td>
                         @endforeach
+
                         <td><button><a href="{{ route('products.show', $product->id) }}">Show</a></button></td>
-                        <td><button><a href="">Edit</a></button></td>
+                        <td><button><a href="{{ route('products.edit', $product->id) }}">Edit</a></button></td>
                         <td><button><a href="">Delete</a></button></td>
                     </tr>
                 @endforeach
