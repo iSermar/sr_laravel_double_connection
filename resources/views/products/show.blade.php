@@ -19,7 +19,9 @@
                 </tr>
                 <tr>
                     <td>Category:</td>
-                    <td>{{ $category->name }}</td>
+                    @foreach ($product->categories as $category)
+                        <td>{{ $category->name }}</td>
+                    @endforeach
                 </tr>
             </table>
             <br/>
